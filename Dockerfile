@@ -4,6 +4,8 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
     git \
+    pkg-config \
+    libsqlite3-dev \
     unzip \
     libzip-dev \
     && docker-php-ext-install pdo pdo_sqlite \
