@@ -20,7 +20,8 @@ COPY public ./public
 COPY resources ./resources
 COPY routes ./routes
 COPY storage ./storage
-COPY vendor ./vendor
+
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 RUN mkdir -p /tmp \
     && touch /tmp/database.sqlite \
